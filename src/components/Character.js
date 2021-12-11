@@ -1,12 +1,18 @@
 // Write your Character component here
 import React from 'react'
 
+import styled from 'styled-components'
+
 const Character = props => {
+
+    const{ info, open } = props
+   
     return (
         <div className='character'>
-            {props.info.name}
-            <button onClick={() => openDetails(props.info.id)}>
-                See details
+            {info.name}
+            
+            <button onClick ={open}>
+                See Details
             </button>
         </div>
   )

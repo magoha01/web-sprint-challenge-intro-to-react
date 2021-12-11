@@ -78,7 +78,19 @@ After finishing your required elements, you can push your work further. These go
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Put your answers underneath the questions:
 
+
+
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
+ React JS is an open source library used for building interfaces for single page applications. REact's advatage is that you are able to create components, reusable pieces of ui, that can easily be changed/manipulated dynamically, vs having to manually recreate them.
+
 1. Describe component state.
+    Component state is  a JavaScript object React uses to represent  information about the component's current situation. State starts with a default value set in use state, and updates with user interaction/changes to components. 
+
 1. Describe props.
+
+    Component props are what pass information  on from parent to child components. for example, if you have a function in your app.js, and you wanted to pass it to a card component, you could pass the function as props inside the card component (ex. <Card push={pushButton} />)
+
+
 1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+
+Side effects are anything that affect  else outside of the scope of the function being currently being executed. You sync side effects in a React component by either adding event listeners to certain elements in a component, or by putting them in the brackets in the end of the effect hook. 
