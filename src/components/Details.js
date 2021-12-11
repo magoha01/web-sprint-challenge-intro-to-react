@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
+
+const DetailDiv= styled.div`
+    background-color: white;
+`
+
 export default function Details(props) {
 
     const {charId, close } = props;
     const [charDetails, setCharDetails] = useState([]);
    
     useEffect(() => {
-        //runs after 1st render for sure, then after every random dom surgery
-        //caused by a change in friendId
        
         axios.get('https://swapi.dev/api/people/', charId)
         .then(res =>{
@@ -18,20 +21,22 @@ export default function Details(props) {
           debugger;
         })
         }
+
 , [charId])
 
     return (
-        <div className='container'>
+        <DetailDiv>
         
              <h2>Details of {charDetails.name}:</h2>
           
             charDetails &&
             <>
-            <p>{charDetails.name} is {charDetails.age}</p>
-            <p>height is {charDetails.name}</p>
+            <p>{charDetails.name} is {charDetails.age} years old.</p>
+            <p>Their Birth year is {charDetails.birth_year}</p>
+            <p>Homeworld is {charDetails.homeworld}</p>
             <button onClick={close}>Close</button>
             </>
-        </div>
+        </DetailDiv>
       )
     }
     
